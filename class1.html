@@ -190,8 +190,24 @@ def hello():
             <li>The route is what you enter in your web browser (after the server name)
               <p class="copy--small box--small">For example: <code>https://twitter.com/camdroid217</code></p>
               <p class="copy--small box--small"><code>twitter.com</code> specifies the server, and <code>camdroid217</code> specifies that I want data for a particular user (me!)</p>
-
+              <!-- TODO Add example of static route that isn't root -->
+            </li>
           </ul>
+        </section>
+        <section>
+          <h3>Dynamic Routes</h3>
+          <ul class="list--xtall box--small">
+            <li class="fragment">As you can imagine, if Twitter had to have a specific route for each user, that would be a huge amount of code!</li>
+            <li class="fragment">To avoid this, we can use something called "dynamic routes."</li>
+            <li class="fragment">We give the program an idea of what to expect, and it handles the rest!</li>
+        </section>
+        <section>
+          <h3>Example</h3>
+          <pre><code class="python">
+@app.route('/&lt;username&gt;')
+def hello(username):
+    return "Hello " + username
+          </code></pre>
         </section>
       </section>
 
