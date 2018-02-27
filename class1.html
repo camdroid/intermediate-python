@@ -75,9 +75,10 @@
             <li class="fragment"><strong>Module:</strong> Take advantage of code that other people have written</li>
             <li class="fragment"><strong>pip:</strong> Tool to easily install Python modules</p></li>
             <li class="fragment"><strong>Virtual Environment:</strong> Make sure nothing we install today messes up your other projects</li>
+            <li class="fragment"><strong>Request:</strong> What happens when you enter a URL or click a button</li>
           </ul>
       </section>
-      <section>
+      <section> <!-- Class Prep -->
         <section>
           <h3>Class Prep</h3>
           <p class="box--small copy--small">Let's make sure we're all running Flask!</p>
@@ -147,11 +148,51 @@
 
       <!-- Block 2: 30 minutes -->
       <section>
-          <h3>Let's Develop It!<br/><small><span class="blue">Working in the Python Shell</span></small></h3>
-          <p class="box--small">Open up your terminal and type <code>python3</code></p>
-          <p class="fragment copy--small box--small">Follow along with the examples in the upcoming slides.<br/><strong>Just type them right in!</strong></p>
-          <p class="fragment copy--small box--small">Feel free to explore, as well.<br/>You will not accidentally break things!</p>
-          <p class="fragment box--small copy--xsmall">When you're done, type <code>exit()</code> to close the Python shell</p>
+        <section>
+          <h3>Let's Develop It!</h3>
+          <p class="box--small">Try running <code>python hello_world.py</code></p>
+          <p class="fragment copy--small box--small">Launch your browser, go to <code>localhost:5000</code></p>
+          <p class="fragment copy--small box--small">You should see something like this:</p>
+          <img class="fragment" src="images/hello_world.png"></img>
+        </section>
+        <section>
+          <h3>Let's look at the code</h3>
+          <p class="box--small">Open up <code>hello_world.py</code> in your preferred text editor.</p>
+        </section>
+        <section>
+           <h3>Flask Boilerplate</h3>
+           <pre><code contenteditable class="python">
+from flask import Flask
+app = Flask(__name__)
+
+# ...
+# Other stuff
+# ...
+
+if __name__ == '__main__':
+    app.run()
+           </code></pre>
+           <p class="fragment">This is the boilerplate code that tells flask to run.</p>
+           <p class="fragment">Don't really need to worry about much more than that right now.</p>
+        </section>
+        <section>
+          <h3>Flask Routes</h3>
+          <ul class="list--xtall box--small copy--small">
+            <li>A "route" is how you tell a server what program you want it to run.</li>
+            <li><code>@app.route('/')</code> - means "run this code when someone requests '/' (the root directory)"</li>
+            <li>If we want to make other routes possible, we can add more lines like <code>@app.route('my_route')</code></li>
+            <!-- <li><pre><code class="python">
+@app.route('/')
+def hello():
+    return 'Hello World!'
+              </code></pre>
+            </li> -->
+            <li>The route is what you enter in your web browser (after the server name)
+              <p class="copy--small box--small">For example: <code>https://twitter.com/camdroid217</code></p>
+              <p class="copy--small box--small"><code>twitter.com</code> specifies the server, and <code>camdroid217</code> specifies that I want data for a particular user (me!)</p>
+
+          </ul>
+        </section>
       </section>
 
       <!-- Variables & Arithmatic -->
