@@ -218,6 +218,80 @@ def hello(username):
         </section>
       </section>
 
+      <!-- Flask Templating -->
+      <section>
+        <section>
+          <h3>Templating</h3>
+          <p class="fragment">So far, not very useful - can only display basic sentences, nothing fancy.</p>
+          <p class="fragment">Flask is a "back-end" language - it deals with what happens behind the scenes, not what the user sees.</p>
+        </section>
+        <section>
+          <h3>Back End?</h3>
+          <ul class="list--xtall box--small">
+            <li class="fragment">The web is split (mostly) into two types of development - "front end" and "back end"</li>
+            <li class="fragment">Flask is a back-end language - it works on the servers, and isn't very useful for displaying results to the user (by itself)</li>
+            <li class="fragment">To display things on a nice webpage, we turn to the front-end: HTML, CSS, and Javascript</li>
+            <li class="fragment">In this class, we'll only focus on HTML, but CSS and JS are really useful!</li>
+          </ul>
+        </section>
+        <section>
+           <h3>Basic Templating</h3>
+           <p>Just going to display a simple HTML page</p>
+           <pre><code class="html">
+&lt;html>
+    &lt;head>
+        &lt;title>Hello!&lt;/title>
+    &lt;/head>
+    &lt;body>
+        &lt;h1>Hello World!</h1>
+    &lt;/body>
+&lt;/html>
+          </code></pre>
+        </section>
+        <section>
+          <h3>In Flask, we write</h3>
+          <pre><code class="python">
+@app.route('/world')
+def hello_world():
+    return render_template('index.html')
+          </code></pre>
+        </section>
+        <section>
+          <h3>Result:</h3>
+          <img src="images/basic_templating.png"></img>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h3>Dynamic Templating</h3>
+          <ul class="list--xtall box--small">
+            <li class="fragment">Make all the things dynamic!</li>
+            <li class="fragment">With <code>render_template</code>, we can use Python variables inside our templates!</li>
+
+        </section>
+        <section>
+          <h3>Templating Example - HTML</h3>
+          <pre><code class="html">
+&lt;html>
+    &lt;head>
+        &lt;title>Hello World!&lt;/title>
+    &lt;/head>
+    &lt;body>
+        &lt;h1>Hello {{ username }}</h1>
+    &lt;/body>
+&lt;/html>
+          </code></pre>
+        </section>
+        <section>
+          <h3>Templating Example - Python</h3>
+          <pre><code class="python">
+@app.route('/&lt;username>')
+def hello():
+    return render_template('index.html', username=username)
+          </code></pre>
+        </section>
+      </section>
+
       <!-- Variables & Arithmatic -->
       <section>
         <section>
