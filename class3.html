@@ -68,22 +68,15 @@
           </ul>
         </section>
         <section>
-          <h3>Example Project Setup</h3>
-          <p class="box--small copy--small">Set up the example project from Github</p>
-          <ul class="list--xtall box--small copy--small">
+          <h3>SQLAlchemy Boilerplate</h3>
+          <p class="box--small copy--small">Like the rest of the boilerplate provided, you don't <i>really</i> need to understand this, but it comes in handy.</p>
+          <ul>
             <li>
-              <a href="https://github.com/camdroid/0318-sample" target="_blank">Class Git Repo</a>
-            </li>
-            <li>
-              <p class="box--small copy--small">Click "Clone" and copy the URL</p>
-            </li>
-            <li>
-              <p class="box--small copy--small">On your computer, run <code>git clone url_you_copied</code></p>
-            </li>
-            <li>
-              <p>Go into the directory:
-                <code class="copy--xsmall">cd 0318-sample</code>
-              </p>
+              <pre><code class="python">
+app = Flask(__name__)
+app.config.from_object(config)
+db = SQLAlchemy(app)
+              </code></pre>
             </li>
         </section>
         <section>
