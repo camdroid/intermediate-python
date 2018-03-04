@@ -71,28 +71,48 @@
           <h3>SQLAlchemy Boilerplate</h3>
           <p class="box--small copy--small">Like the rest of the boilerplate provided, you don't <i>really</i> need to understand this, but it comes in handy.</p>
           <ul>
-            <li>
+            <li class="fragment">
               <pre><code class="python">
 app = Flask(__name__)
 app.config.from_object(config)
 db = SQLAlchemy(app)
               </code></pre>
             </li>
-        </section>
-        <section>
-          <h3>Setting up Your Virtual Environment</h3>
-          <p class="box--small copy--small">What the heck is a virtual environment?</p>
-          <ul class="list--xtall box--small copy--small">
-            <li class="fragment">Virtual environments let you install multiple versions of packages</li>
-            <li class="fragment">Doesn't mean much right now, but very useful when you have multiple projects</li>
-            <li class="fragment"><code>python3 -m venv env; source env/bin/activate</code></li>
-            <li class="fragment">With virtual environments, you can easily install project dependencies</li>
-            <li class="fragment"><code>pip install -r requirements.txt</code></li>
-            <li class="fragment"><a href="https://realpython.com/blog/python/python-virtual-environments-a-primer/" target="_blank">Further Reading on Virtual Environments</a></li>
+            <li class="fragment">If you look in <code>config.py</code>, you'll see some configuration options for your database.
+            </li>
+            <li class="fragment">Basically, this tells SQLAlchemy where to create your database</li>
           </ul>
         </section>
         <section>
-          <img src="images/git_clone.png" class="img--bare" height="450px" />
+          <h3>Creating the Database</h3>
+          <ul class="list--xtall">
+            <li class="fragment"><pre><code class="python">
+db.create_all()
+            </code></pre></li>
+            <li class="fragment">This is what actually creates the database</li>
+            <li class="fragment">It takes everything that has been created so far (we'll get to that in a minute) and creates tables for it all</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Remembering Recipes</h3>
+          <p class="box--small copy--small">We use databases to get our program to remember things.</p>
+          <ul class="list--xtall box--small copy--small">
+            <li class="fragment"><pre><code class="python">
+class Recipe(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(64))
+            </code></pre></li>
+            <li class="fragment">What do these lines actually do?</li>
+            <li class="fragment"><code>db.Model</code> tells SQLAlchemy that we want to add this to the database</li>
+            <li class="fragment">It also gives us access to some really neat helper functions</li>
+          </ul>
+        </section>
+        <section>
+          <h3>db Helper Functions</h3>
+          <ul class="list--xtall box--small copy--small">
+            <li class="fragment"><code>db.Column</code> tells the program that we want a column in the database with certain properties</li>
+            <li class="fragment"><code>db.Integer</code> and <code>db.String</code> specify what type of data each column is</li>
+          </ul>
         </section>
         <section>
           <h4>(This section may change, depending what the dependencies are)</h4>
