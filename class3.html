@@ -50,6 +50,7 @@
 
       <!-- Background Knowledge: ?? minutes -->
       <section>
+        <section>
           <h3>What is a Database?</h3>
           <!-- TODO <p class="box--small copy--small">(Links to further reading)</p> -->
           <ul class="list--xtall box--small copy--small">
@@ -57,6 +58,19 @@
             <li class="fragment"><p>For example, without databases, you would have to re-enter all of your friends every time you logged onto Facebook!</p></li>
             <li class="fragment"><p>Easiest way to visualize is to think of each SQL table in Excel</p></li>
           </ul>
+        </section>
+        <section>
+          <h4>Database CRUD</h4>
+          <ul class="list--xtall box--small copy--small">
+            <li class="fragment">Databases need to do a couple things in order to be useful. These make up the acronym CRUD:</li>
+            <li class="fragment"><strong>C (Create)</strong>: We need to be able to create new database entries.</li>
+            <li class="fragment"><strong>R (Read)</strong>: When we put data into the database, we need a way to get it back out</li>
+            <li class="fragment"><strong>U (Update)</strong>: If data we've entered previously becomes out of date, we need a way to update it.</li>
+            <li class="fragment"><strong>D (Delete)</strong>: We need to be able to delete data that we no longer need</li>
+            <li class="fragment">For this class, we'll only focus on creating and reading - feel free to add the others as practice!</li>
+          </ul>
+        </section>
+
       </section>
       <section> <!-- Intro to SQL Alchemy -->
         <section>
@@ -115,8 +129,6 @@ class Recipe(db.Model):
           </ul>
         </section>
         <section>
-          <h4>(This section may change, depending what the dependencies are)</h4>
-          <img src="images/pip_install.png" class="img--bare" height="450px" />
         </section>
       </section>
 
