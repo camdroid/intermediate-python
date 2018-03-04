@@ -133,12 +133,54 @@ class Recipe(db.Model):
           <img src="images/spreadsheet_two_columns.png">
         </section>
       </section>
+      <section> <!-- Reading and writing to databases -->
+        <section>
+          <h3>Writing to a Database</h3>
+          <p>Databases aren't very useful if we can't add information to them</p>
+          <ul class="list--xtall box--small copy--small">
+            <li>First, let's create an object we want to save</li>
+            <li><pre><code class="python">
+my_recipe = new Recipe(
+    title='My new recipe!',
+    ingredients='1 pound of chicken, 1 tsp cumin',
+    instructions='Mix well'
+)
+            </code></pre></li>
+          </ul>
+        </section>
+        <section>
+          <h3>Writing to a Database</h3>
+          <ul class="list--tall box--small copy--small">
+            <li>Now, let's tell the database to save it! This looks a little weird:</li>
+            <li><pre><code class="python">
+db.session.add(my_recipe)
+db.session.commit()
+            </code></pre></li>
+            <li>This tells the database to save the recipe we just created.</li>
+            <li>"Add" tells the database that we'll want to save this object</li>
+            <li>"Commit" tells the database to go ahead and save this</li>
+            <li>Doesn't make much of a difference now, but with large projects, it's helpful to have these be two separate steps</li>
+          </ul>
+        </section>
+        <!-- TODO Add an exercise here -->
+        <section>
+          <h3>Reading from a database</h3>
+          <p>Doesn't make much sense to write to a database if we can't get the information back!</p>
+          <ul class="list--xtall box--small copy--small">
+            <li>We can query the database to get our data back</li>
+            <li><pre><code class="python">
+recipes = Recipe.query.all()
+            </code></pre></li>
+            <li>This gets a list of all of the Recipe objects that we've put into our database</li>
+          </ul>
+        </section>
+      </section>
 
       <!-- Block 2: 30 minutes -->
       <section>
         <section>
           <h3>Let's Develop It!</h3>
-          <p class="box--small">Try running <code>python hello_world.py</code></p>
+          <p class="box--small"></p>
           <p class="fragment copy--small box--small">Launch your browser, go to <code>localhost:5000</code></p>
           <p class="fragment copy--small box--small">You should see something like this:</p>
           <img class="fragment" src="images/hello_world.png"></img>
