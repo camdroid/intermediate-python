@@ -127,6 +127,29 @@ my_fish_recipe.instructions = 'Mix and fry!'
           </code></pre>
         </section>
       </section>
+      <section>
+        <section>
+          <h3>How do we use this with Flask?</h3>
+          <ul class="list--xtall box--small copy--small">
+            <li>We can use Flask to display our recipes!</li>
+            <li>Last session, we learned how to use templates, and show those to our users</li>
+            <li>This session, we've provided a template that you can use for this!</li>
+            <li>Try putting this in one of your existing functions:</li>
+            <li><pre><code class="python">
+recipes = [my_chicken_recipe, my_fish_recipe]
+return render_template('list_recipes.html', recipes=recipes)
+            </code></pre></li>
+          </ul>
+        </section>
+        <section>
+          <h3>This is pretty limiting...</h3>
+          <ul class="list--xtall box--small copy--small">
+            <li>Obviously, it'd be a <strong><i>huge</i></strong> pain if we had to put every new recipe in code</li>
+            <li>What if we built a way to enter them from the website?</li>
+            <li>This is where forms come in - we can give users a form, and they can enter their own recipes</li>
+          </ul>
+        </section>
+      </section>
       <section> <!-- Class Prep -->
         <section>
           <h3>Class Prep</h3>
