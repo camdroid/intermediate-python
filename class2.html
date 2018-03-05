@@ -216,6 +216,46 @@ def show_recipe_form():
             <li>What does that mean?</li>
           </ul>
         </section>
+        <section>
+          <h3>GET and POST Methods</h3>
+          <ul class="list--xtall box--small copy--small">
+            <li>There are a couple ways to send data over the internet</li>
+            <li>GET and POST methods are the most popular</li>
+            <li>"GET" means that your request is just fetching information, it won't change anything.</li>
+            <li>i.e. Fetching your emails, or looking up a recipe</li>
+            <li>"POST" means that your request may change information</li>
+            <li>i.e. Sending an email, or submitting a recipe to another website</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Why are we seeing this?</h3>
+          <ul class="list--xtall box--small copy--small">
+            <li>If you take a look at <code>templates/recipe_form.html</code>, you'll see this line:</li>
+            <li><code class="html">&lt;form action='/add_recipe' method='post'&gt;</code></li>
+            <li>Because adding a recipe is a change of information, the form is using a post request to '/add_recipe'</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Back to our Handler</h3>
+          <ul class="list--xtall box--small copy--small">
+            <li>We have this decorating our <code>show_recipe_form</code> method:</li>
+            <li><pre><code class="python">
+@app.route('/add_recipe')
+            </code></pre></li>
+            <li>By default, flask routes only accept GET requests</li>
+            <li>If we want to accept a POST request, we have to specifically tell the method that</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Adding a POST handler</h3>
+          <ul class="list--xtall box--small copy--small">
+            <li>We can add another route to be:</li>
+            <li><pre><code class="python">
+@app.route('/add_recipe', methods=['POST'])
+            </code></pre></li>
+            <li>Whatever method we use this with will receive responses from the form</li>
+          </ul>
+        </section>
       </section>
       <section> <!-- Class Prep -->
         <section>
