@@ -129,6 +129,40 @@ my_fish_recipe.instructions = 'Mix and fry!'
       </section>
       <section>
         <section>
+          <h3>This is pretty cumbersome</h3>
+          <ul class="list--xtall box--small copy--small">
+            <li>To make it easier to create objects, we can make something called a <strong>constructor</strong></li>
+            <li>That looks like this in our class:</li>
+            <li><pre><code class="python">
+class Recipe:
+    def __init__(self, title, ingredients, instructions):
+        self.title = title
+        self.ingredients = ingredients
+        self.instructions = instructions
+            </code></pre></li>
+            <li><code>self</code> is shorthand for "this object being created right now"</li>
+            <li>This just says "save all of these values that we're giving to you"</li>
+          </ul>
+        </section>
+        <section>
+          <h3>These two bits of code are equivalent</h3>
+          <ul class="list--xtall box--small copy--small">
+            <li><pre><code class="python">
+my_chicken_recipe = Recipe()
+my_chicken_recipe.title = 'Tasty Chicken'
+my_chicken_recipe.ingredients = '1 whole chicken, 1 tsp of cumin'
+my_chicken_recipe.instructions = 'Mix the two'
+            </code></pre></li>
+            <li><pre><code class="python">
+my_chicken_recipe = Recipe(
+    title='Tasty Chicken',
+    ingredients='1 whole chicken, 1 tsp of cumin',
+    instructions='Mix the two'
+            </code></pre></li>
+            <li>Both objects will end up with the same values, but the second is easier to read</li>
+          </ul>
+        </section>
+        <section>
           <h3>How do we use this with Flask?</h3>
           <ul class="list--xtall box--small copy--small">
             <li>We can use Flask to display our recipes!</li>
