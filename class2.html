@@ -192,6 +192,30 @@ class RecipeForm(FlaskForm):
               <ul class="copy--xsmall"><li>This makes a button that the user can click to submit their answers when they're done filling out the form</li></ul>
           </ul>
         </section>
+        <section>
+          <h3>Our Code In Action</h3>
+          <ul class="list--xtall box--small copy--small">
+            <li>In order to see our code in action, add this view function to your code:</li>
+            <li><pre><code class="python">
+@app.route('/add_recipe')
+def show_recipe_form():
+    recipe_form = RecipeForm()
+    return render_template('recipe_form.html', form=recipe_form)
+            </code></pre></li>
+          </ul>
+        </section>
+        <section>
+          <h3>Our Code In Action</h3>
+          <p>Your site should look something like this</p>
+          <img src="images/recipe_form.png">
+        </section>
+        <section>
+          <h3>Our Code's Inaction?</h3>
+          <ul class="list--xtall box--small copy--small">
+            <li>As it is right now, clicking the "Submit" button will result in a 'Method Not Allowed' error</li>
+            <li>What does that mean?</li>
+          </ul>
+        </section>
       </section>
       <section> <!-- Class Prep -->
         <section>
