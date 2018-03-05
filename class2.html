@@ -257,6 +257,43 @@ def show_recipe_form():
           </ul>
         </section>
       </section>
+      <section>
+        <section>
+          <h3>Let's receive a POST request</h3>
+          <ul class="list--xtall box--small copy--small">
+            <li>We need a method that starts like this:</li>
+            <li><pre><code class="python">
+@app.route('/add_recipe', methods=['POST'])
+def add_recipe():
+    form = RecipeForm()
+            </code></pre></li>
+            <li><code>form</code> is where we'll get all of the information that the user entered</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Getting Data From a Form</h3>
+          <ul class="list--xtall box--small copy--small">
+            <li>We can read the data from each part of the form</li>
+            <li>When we created the form, we had three pieces of information we were looking for:
+              <ul class="copy--xsmall">
+                <li>title</li>
+                <li>ingredients</li>
+                <li>instructions</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>Getting Data From a Form</h3>
+          <ul class="list--xtall box--small copy--small">
+            <li>To get each of those, we can use code like this: <pre><code class="python">
+form.title.data
+form.ingredients.data
+form.instructions.data
+            </code></pre></li>
+          </ul>
+        </section>
+      </section>
       <section> <!-- Class Prep -->
         <section>
           <h3>Class Prep</h3>
