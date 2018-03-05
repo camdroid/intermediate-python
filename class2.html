@@ -351,6 +351,25 @@ return render_template('list_recipes.html', recipes=[new_recipe])
             </code></pre></li>
           </ul>
         </section>
+        <section>
+          <h3>Our Code So Far</h3>
+          <pre><code class="python">
+@app.route('/add_recipe')
+def show_recipe_form():
+    recipe_form = RecipeForm()
+    return render_template('recipe_form.html', form=recipe_form)
+
+@app.route('/add_recipe', methods=['POST'])
+def add_recipe():
+    form = RecipeForm()
+    new_recipe = Recipe(
+        title=form.title.data,
+        ingredients=form.ingredients.data,
+        instructions=form.instructions.data
+    )
+    return render_template('list_recipes.html', recipes=[new_recipe])
+          </code></pre>
+        </section>
       </section>
       <section> <!-- Class Prep -->
         <section>
