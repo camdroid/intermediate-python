@@ -150,6 +150,49 @@ return render_template('list_recipes.html', recipes=recipes)
           </ul>
         </section>
       </section>
+      <section> <!-- Forms -->
+        <section>
+          <h3>What is a form?</h3>
+          <ul class="list--xtall box--small copy--small">
+            <li>You've probably seen these before</li>
+            <li>Really easy way to get information from users</li>
+            <li>Can build a form using another Flask module</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Building a Flask Form</h3>
+          <ul class="list--xtall box--small copy--small">
+            <li>Using <code>flask_wtf</code> and <code>wtforms</code> modules</li>
+            <li>This means someone else has already done the work for making these forms, we just have to customize them to suit our needs.</li>
+            <li><pre><code class="python">
+from flask_wtf import FlaskForm
+from wtforms import StringField, TextAreaField, SubmitField
+
+class RecipeForm(FlaskForm):
+    title = StringField('Title')
+    ingredients = TextAreaField('Ingredients')
+    instructions = TextAreaField('Instructions')
+    submit = SubmitField('Submit')
+            </code></pre></li>
+          </ul>
+        </section>
+        <section>
+          <h3>What does that code actually do?</h3>
+          <p>Let's break it down</p>
+          <ul class="list--xtall box--small copy--small">
+              <li><code>class RecipeForm(FlaskForm):</code>
+                  <ul class="copy--xsmall"><li>Makes a class (RecipeForm) based on FlaskForm (gives a lot of helper functions and variables)</li></ul>
+              </li>
+              <li><code>title = StringField('Title')</code>
+                <ul class="copy--xsmall"><li>This will end up making a field for the recipe title in our HTML form</li></ul>
+              </li>
+              <li><code>ingredients = TextAreaField('Ingredients')</code></li>
+              <ul class="copy--xsmall"><li>This will make a multi-line input field for ingredients</li></ul>
+              <li><code>submit = SubmitField('Submit')</code></li>
+              <ul class="copy--xsmall"><li>This makes a button that the user can click to submit their answers when they're done filling out the form</li></ul>
+          </ul>
+        </section>
+      </section>
       <section> <!-- Class Prep -->
         <section>
           <h3>Class Prep</h3>
