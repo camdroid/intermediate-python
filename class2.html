@@ -329,6 +329,28 @@ form.instructions.data
             </code></pre></li>
           </ul>
         </section>
+        <section>
+          <h3>Making the data useful</h3>
+          <ul class="list--xtall box--small copy--small">
+              <li>We have our Recipe object from earlier - we can use that here!</li>
+              <li><pre><code class="python">
+new_recipe = Recipe(
+    title=form.title.data,
+    ingredients=form.ingredients.data,
+    instructions=form.instructions.data
+)
+            </code></pre></li>
+          </ul>
+        </section>
+        <section>
+          <h3>Showing our Results</h3>
+          <ul class="list--xtall box--small copy--small">
+            <li>After the user enters their results, we can use our previous template to show their recipe</li>
+            <li><pre><code class="python">
+return render_template('list_recipes.html', recipes=[new_recipe])
+            </code></pre></li>
+          </ul>
+        </section>
       </section>
       <section> <!-- Class Prep -->
         <section>
