@@ -112,23 +112,6 @@ my_recipe.instructions = 'Mix the two'
           </ul>
         </section>
         <section>
-          <h3>Using objects</h3>
-          <p>We can use objects to group together related information</p>
-          <pre><code class="python">
-my_chicken_recipe = Recipe()
-my_chicken_recipe.title = 'Tasty Chicken'
-my_chicken_recipe.ingredients = '1 whole chicken, 1 tsp of cumin'
-my_chicken_recipe.instructions = 'Mix the two'
-
-my_fish_recipe = Recipe()
-my_fish_recipe.title = 'Delicious Fish'
-my_fish_recipe.ingredients = '1 fish, 1 tsp garlic'
-my_fish_recipe.instructions = 'Mix and fry!'
-          </code></pre>
-        </section>
-      </section>
-      <section>
-        <section>
           <h3>This is pretty cumbersome</h3>
           <ul class="list--xtall box--small copy--small">
             <li>To make it easier to create objects, we can make something called a <strong>constructor</strong></li>
@@ -162,6 +145,25 @@ my_chicken_recipe = Recipe(
             <li>Both objects will end up with the same values, but the second is easier to read</li>
           </ul>
         </section>
+        <section>
+          <h3>Using objects</h3>
+          <p>We can use objects to group together related information</p>
+          <pre><code class="python">
+my_chicken_recipe = Recipe(
+    title='Tasty Chicken',
+    ingredients='1 whole chicken, 1 tsp of cumin',
+    instructions='Mix the two'
+)
+
+my_fish_recipe = Recipe(
+    title='Delicious Fish',
+    ingredients='1 fish, 1 tsp garlic',
+    instructions='Mix and fry!'
+)
+          </code></pre>
+        </section>
+      </section>
+      <section>
         <section>
           <h3>How do we use this with Flask?</h3>
           <ul class="list--xtall box--small copy--small">
