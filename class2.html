@@ -53,6 +53,41 @@
       <!-- Background Knowledge: ?? minutes -->
       <section>
         <section>
+          <h3>"The Stack"</h3>
+          <ul class="list--xtall box--small copy--small">
+              <li class="fragment">We talked a bit last week about how different web language fit together</li>
+              <li class="fragment">People often refer to this as the "stack"</li>
+              <li class="fragment">You'll also hear the terms "front-end" or "back-end"</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Front-End</h3>
+          <ul class="list--xtall box--small copy--small">
+              <li class="fragment">This is the part the user sees and interacts with</li>
+              <li class="fragment"><strong>HTML</strong>: The structure of the web page - elements, names, links, etc.</li>
+              <li class="fragment">Also includes metadata - data about the page that's being served (title, character sets, keywords)</li>
+              <li class="fragment"><strong>CSS</strong>: Styling - changes what the page <i>looks</i> like</li>
+              <li class="fragment">Can make the HTML structures actually look good</li>
+              <li class="fragment"><strong>Javascript</strong>: Used to enable interaction with the user</li>
+              <li class="fragment">Javascript is one of the most popular languages in use</li>
+              <li class="fragment">Most people pick a preferred "flavor" of Javascript and specialize in that:</li>
+              <li class="fragment">Angular, Node, React, Vue</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Back-End</h3>
+          <ul class="list--xtall box--small copy--small">
+              <li class="fragment">The part of your code that lives on the server</li>
+              <li class="fragment">Deals with logic and data models or access</li>
+              <li class="fragment">Can involve database design and implementation</li>
+              <li class="fragment">Languages like Python, PHP, and Java</li>
+              <li class="fragment">Sometimes Javascript (Node)</li>
+              <li class="fragment">For databases, languages like MySQL, Postgres, or MongoDB</li>
+          </ul>
+        </section>
+      </section>
+      <section>
+        <section>
           <h3>Background Knowledge</h3>
           <p class="box--small copy--small">What is a class?</p>
           <ul class="list--xtall box--small copy--small">
@@ -67,22 +102,23 @@
           <h3>Classes and Objects</h3>
           <p>What's the difference?</p>
           <ul class="list--xtall box--small copy--small">
-            <li>A class is a template, an object is a </li>
-            <li>For a Car class, you might want to keep track of:
+            <li>A class is a template, an object is a specific instance of that</li>
+            <li>"Cookie cutters" - the class is the cutter, the object is the resulting cookie</li>
+            <li>For a recipe class, you might want to keep track of:
               <ul>
-                <li>Number of wheels</li>
-                <li>Color of the car</li>
-                <li>Automatic/Manual transmission</li>
+                <li>Name of the recipe</li>
+                <li>Ingredients needed</li>
+                <li>Directions for making the recipe</li>
               </ul></li>
-            <li>A car object is a specific instance of the class</li>
-            <li>You can't say <i>all</i> cars have four wheels (i.e. semi trucks), but you can say <i>this</i> car has four wheels</li>
+            <li>A receipe object is a specific instance of the class</li>
+            <li>You can't say <i>all</i> recipes use eggs, but you can say <i>this</i> recipe uses eggs</li>
           </ul>
         </section>
         <section>
           <h3>What does the code look like?</h3>
           <ul class="list--xtall box--small copy--small">
             <li><pre><code class="python">
-class Recipe():
+class Recipe:
             </code></pre></li>
             <li>This tells Python that we want a class named "Recipe", but nothing else</li>
           </ul>
@@ -92,7 +128,7 @@ class Recipe():
           <ul class="list--xtall box--small copy--small">
             <li>To keep track of the title of a recipe, we need a field for that</li>
             <li><pre><code class="python">
-class Recipe():
+class Recipe:
     title = ''
     ingredients = ''
     instructions = ''
@@ -161,6 +197,15 @@ my_fish_recipe = Recipe(
     instructions='Mix and fry!'
 )
           </code></pre>
+        </section>
+        <section>
+          <h3>Let's Develop It!</h3>
+          <ul class="list--xtall box--small copy--small">
+              <li class="fragment">Now that we've got our Recipe class figured out, try making an Ingredient class!</li>
+              <li class="fragment">An ingredient object should keep track of type and quantity of a recipe ingredient</li>
+              <li class="fragment">Use your Ingredient class instead of a string for the ingredients</li>
+
+          </ul>
         </section>
       </section>
       <section>
