@@ -149,7 +149,7 @@
       <!-- Block 2: 30 minutes -->
       <section>
         <section>
-          <h3>Let's Develop It!</h3>
+          <h3>Checkpoint</h3>
           <p class="box--small">Try running <code>python hello_world.py</code></p>
           <p class="fragment copy--small box--small">Launch your browser, go to <code>localhost:5000</code></p>
           <p class="fragment copy--small box--small">You should see something like this:</p>
@@ -170,7 +170,7 @@ app = Flask(__name__)
 # ...
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
            </code></pre>
            <p class="fragment">This is the boilerplate code that tells flask to run.</p>
            <p class="fragment">Don't really need to worry about much more than that right now.</p>
@@ -235,7 +235,7 @@ def hello(username):
           </ul>
         </section>
         <section>
-           <h3>Basic Templating</h3>
+           <h3>Basic Template</h3>
            <p>Just going to display a simple HTML page</p>
            <pre><code class="html">
 &lt;html>
@@ -243,7 +243,7 @@ def hello(username):
         &lt;title>Hello!&lt;/title>
     &lt;/head>
     &lt;body>
-        &lt;h1>Hello World!</h1>
+        &lt;h1>Hello World!&lt;/h1>
     &lt;/body>
 &lt;/html>
           </code></pre>
