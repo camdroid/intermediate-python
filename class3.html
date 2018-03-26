@@ -78,6 +78,7 @@
           <ul class="list--xtall box--small copy--small">
               <li>We won't be dealing directly with the database.</li>
               <li>We'll be using a module called SQLAlchemy, that lets us treat databases like regular Python code</li>
+              <li>Open <code>db_models.py</code> to see the database code!</li>
           </ul>
         </section>
         <section>
@@ -173,34 +174,22 @@ recipes = Recipe.query.all()
             <li>This gets a list of all of the Recipe objects that we've put into our database</li>
           </ul>
         </section>
+        <section>
+          <h3>Filtering Results</h3>
+          <ul class="list--xtall copy--small">
+            <li class="fragment">Much more useful if we can sort/filter our results</li>
+            <li class="fragment">How can we find only the recipes that use chicken?</li>
+            <li class="fragment"><pre><code class="python">
+recipes = Recipe.query.filter(Recipe.ingredients.contains('chicken'))
+            </pre></code></li>
+          </ul>
+        </section>
       </section>
 
       <!-- OUTRO -->
       <section>
         <section>
             <h3>Questions?</h3>
-        </section>
-
-        <section>
-          <h3>Homework</h3>
-          <p class="copy--small box">Write a program that could replace the initial conversation you have at the checkout line.  It should do the following:</p>
-          <div class='box--small'>
-            <pre><code contenteditable class="python" style="min-height: 50px;">
->> Did you find everything ok?
-(wait for input)
-
->> What's your name?
-(read in a name from the user)
-
->> Hi, (User's Name) do you want paper or plastic?
-(wait for input)
-
->> What is your total before tax?
-(read in a total)
-
->> Your total with sales tax is: (total with sales tax)
-(wait for input before exiting)
-          </code></pre></div>
         </section>
 
         <section>
@@ -214,8 +203,8 @@ recipes = Recipe.query.all()
         <section>
           <img src="images/gdi_logo_badge.png" class="img--bare" height="450px" />
           <div class="box--small">
-            <h3><span class="green">Intro to Python</span><br/><small><a href="class2.html">Class 2 &raquo;</a></small></h3>
-            <p><small>@gdiannarbor  &nbsp; | &nbsp; #GDIA2 &nbsp; | &nbsp; #IntroToPython</small></p>
+            <h3><span class="green">Intro to Python</span><br/><small><a href="class4.html">Class 4 &raquo;</a></small></h3>
+            <p><small>@gdiannarbor  &nbsp; | &nbsp; #GDIA2 &nbsp; | &nbsp; #InterPython</small></p>
           </div>
         </section>
 
