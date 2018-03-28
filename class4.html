@@ -44,6 +44,7 @@
           <ul class="list--xtall box--small copy--small">
             <li class="fragment">Review of Web Requests</li>
             <li class="fragment">APIs</li>
+            <li class="fragment">CLIs</li>
           </ul>
         </section>
       </section>
@@ -76,6 +77,121 @@
           </ul>
         </section>
       </section>
+      <section>
+        <section>
+          <h3>Writing a Command-Line Interface</h3>
+          <ul class="list--xtall box--small copy--small">
+            <li class="fragment">Sometimes, you don't need a full web interface</li>
+            <li class="fragment">Useful to be able to run scripts from your terminal</li>
+            <li class="fragment">Let's go back to some of the boilerplate code we've been using...</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Defining a Script</h3>
+          <ul class="list--xtall box--small copy--small">
+              <li class="fragment"><pre><code class="python">
+if __name__ == '__main__':
+    app.run(debug=True)
+</code></pre>
+              </li>
+              <li class="fragment">This condition will be true when we run this script from the terminal</li>
+              <li class="fragment">In this case, when we run this file from the terminal, we want the app to start running</li>
+              <li class="fragment">Commonly, we'll also use <pre><code class="python">
+if __name__ == '__main__':
+    main()
+              </code></pre></li>
+              <li class="fragment">Which means we need a function named <code>main</code> (which is a common pattern)</li>
+        </section>
+        <section>
+          <h3>Getting arguments for our script</h3>
+          <ul class="list--xtall box--small copy--small">
+              <li class="fragment">Python has a great module called <code>argparse</code> that makes it easier for us to get command-line arguments</li>
+              <li class="fragment">Boilerplate</br>
+              <pre><code class="python">
+import argparse
+
+parser = argparse.ArgumentParser()
+# ...
+args = parser.parse_args()
+                  </code></pre></li>
+              <li class="fragment">This creates an object to parse arguments that are passed in on the command line</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Adding Arguments</h3>
+          <ul class="list--xtall box--small copy--small">
+            <li class="fragment">There are two main types of arguments: postitional and optional (or named)</li>
+            <li class="fragment">Similar to the types of python arguments we've seen earlier</li>
+            <li class="fragment">Positional:</br>
+              <pre><code class="python">
+parser.addrgument('positional')
+              </code></pre>
+              <pre><code class="bash">
+$ python cli_example.py value
+              </code></pre>
+            </li>
+            <li class="fragment">Named:</br>
+              <pre><code class="python">
+parser.add_argument('--named')
+              </code></pre>
+              <pre><code class="bash">
+$ python cli_example.py --named value
+              </code></pre>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>Argument Data Types</h3>
+          <ul class="list--xtall box--small copy--small">
+            <li class="fragment">We can specify the data types of the arguments that we want to receive</li>
+            <li class="fragment"><pre><code class="python">
+parser.add_argument('--named', type=int)
+            </code></pre></li>
+            <li class="fragment">Specify that the named argument is an integer, and we won't need to cast it when we read the arguments</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Help!</h3>
+          <ul class="list--xtall box--small copy--small">
+            <li class="fragment">Argparse makes a help section for you based on the arguments</li>
+            <li class="fragment">Try running <code>$ python cli_example.py --help</code></li>
+            <li class="fragment"><pre><code class="bash">
+[cherringshaw@cherringshaw-24930 0318-sample (master) ]$ python cli_example.py --help
+usage: cli_example.py [-h] [--optional OPTIONAL] [--number NUMBER] positional
+
+positional arguments:
+  positional           I'm a positional argument!
+
+optional arguments:
+  -h, --help           show this help message and exit
+  --optional OPTIONAL  I'm an optional argument
+  --number NUMBER      This is a number</code></pre></li>
+
+          </ul>
+        </section>
+        <section>
+            <h3>Adding Help</h3>
+            <ul class="list--xtall box--small copy--small">
+                <li class="fragment">In order to get these help messages, we use the "help" parameter in <code>add_argument</code></li>
+                <li class="fragment"><pre><code class="python">
+parser.add_argument('--optional', help="I'm an optional argument")
+                </code></pre>
+                </li>
+            </ul>
+        </section>
+        <section>
+          <h3>General Tips for Building a Script</h3>
+          <ul class="list--xtall box--small copy--small">
+              <li class="fragment">Use meaningful names for arguments</li>
+              <li class="fragment">Break up your script into small functions that do one thing</li>
+              <li class="fragment">Use tools like <code>pdb</code> to debug</li>
+          </ul>
+        </section>
+      </section>
+
+
+
+
       <section> <!-- Intro to SQL Alchemy -->
         <section>
           <h3>What does the code look like?</h3>
